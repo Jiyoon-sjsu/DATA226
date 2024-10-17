@@ -64,7 +64,7 @@ def load(d, symbol, target_table):
         cur.execute("BEGIN;")
         cur.execute(f"DELETE FROM {target_table} WHERE date='{date}'")
         sql = f"""INSERT INTO {target_table} (date, open, close, high, low, volume, symbol) VALUES (
-          '{date}', {d['Open'][0]}, {d['Close'][0]}, {d['High'][0]}, {d['Low'][0]}, {d['Volume'][0]}, '{symbol}[0]')"""
+          '{date}', {d['Open'][0]}, {d['Close'][0]}, {d['High'][0]}, {d['Low'][0]}, {d['Volume'][0]}, '{symbol}')"""
         print(sql)
         cur.execute(sql)
         cur.execute("COMMIT;")
@@ -76,13 +76,13 @@ def load(d, symbol, target_table):
 
 with DAG(
     dag_id = 'YfinanceToSnowflake',
-    start_date = datetime(2024,10,2),
+    start_date = datetime(2024,10,16),
     catchup=False,
     tags=['ETL'],
     schedule = '30 2 * * *'
 ) as dag:
-    target_table = "dev.raw_data.stock_price"
-    symbol = "TSLA"
+    target_table = "hw6.raw_data.stock_price"
+    symbol = "AMD"
 
     data = extract(symbol)
     load(data, symbol, target_table)
