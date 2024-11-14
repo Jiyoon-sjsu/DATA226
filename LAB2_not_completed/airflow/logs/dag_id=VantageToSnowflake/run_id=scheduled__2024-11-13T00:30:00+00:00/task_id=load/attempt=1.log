@@ -1,0 +1,25 @@
+[2024-11-14T00:30:09.068+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-11-14T00:30:09.108+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: VantageToSnowflake.load scheduled__2024-11-13T00:30:00+00:00 [queued]>
+[2024-11-14T00:30:09.123+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: VantageToSnowflake.load scheduled__2024-11-13T00:30:00+00:00 [queued]>
+[2024-11-14T00:30:09.124+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-11-14T00:30:09.146+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): load> on 2024-11-13 00:30:00+00:00
+[2024-11-14T00:30:09.156+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'VantageToSnowflake', 'load', 'scheduled__2024-11-13T00:30:00+00:00', '--job-id', '38', '--raw', '--subdir', 'DAGS_FOLDER/alphavantage_to_snowflake.py', '--cfg-path', '/tmp/tmp7z_gn4x5']
+[2024-11-14T00:30:09.159+0000] {standard_task_runner.py:91} INFO - Job 38: Subtask load
+[2024-11-14T00:30:09.160+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61 DeprecationWarning: This process (pid=4559) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2024-11-14T00:30:09.163+0000] {standard_task_runner.py:63} INFO - Started process 4562 to run task
+[2024-11-14T00:30:09.237+0000] {task_command.py:426} INFO - Running <TaskInstance: VantageToSnowflake.load scheduled__2024-11-13T00:30:00+00:00 [running]> on host da33fa5f41fb
+[2024-11-14T00:30:09.391+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='VantageToSnowflake' AIRFLOW_CTX_TASK_ID='load' AIRFLOW_CTX_EXECUTION_DATE='2024-11-13T00:30:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-11-13T00:30:00+00:00'
+[2024-11-14T00:30:09.395+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-11-14T00:30:09.554+0000] {cursor.py:1149} INFO - Number of results in first chunk: 1
+[2024-11-14T00:30:09.926+0000] {cursor.py:1149} INFO - Number of results in first chunk: 1
+[2024-11-14T00:30:10.339+0000] {cursor.py:1149} INFO - Number of results in first chunk: 1
+[2024-11-14T00:31:00.514+0000] {logging_mixin.py:188} INFO - Data loaded successfully for stock symbol: AAPL
+[2024-11-14T00:31:52.739+0000] {logging_mixin.py:188} INFO - Data loaded successfully for stock symbol: MSFT
+[2024-11-14T00:31:52.835+0000] {cursor.py:1149} INFO - Number of results in first chunk: 1
+[2024-11-14T00:31:52.837+0000] {logging_mixin.py:188} INFO - All data loaded successfully.
+[2024-11-14T00:31:52.838+0000] {python.py:237} INFO - Done. Returned value was: None
+[2024-11-14T00:31:52.839+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-11-14T00:31:52.859+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=VantageToSnowflake, task_id=load, run_id=scheduled__2024-11-13T00:30:00+00:00, execution_date=20241113T003000, start_date=20241114T003009, end_date=20241114T003152
+[2024-11-14T00:31:52.901+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-11-14T00:31:52.920+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-11-14T00:31:52.923+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

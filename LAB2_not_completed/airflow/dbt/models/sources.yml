@@ -1,0 +1,23 @@
+version: 2
+
+sources:
+  - name: raw_data
+    database: lab2
+    schema: raw_data
+    description: "Schema which stores raw tables (ETL)"
+    tables:
+      - name: stock_price
+        identifier: stock_price
+        description: "Stock data including date, open, high, low, close, volume and symbol"
+  - name: analytics
+    database: lab2
+    schema: analytics
+    description: "Schema with stores analytics tables (ELT)"
+    tables:
+      - name: stock_moving_avg
+        identifier: stock_moving_avg
+        description: "Stock data containing date, symbol and calculated moving average"
+      - name: stock_rsi
+        identifier: stock_rsi
+        description: "Stock data containing date, symbol and calculated rsi"
+    
